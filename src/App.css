@@ -1,4 +1,6 @@
-
+body{
+  max-width: 100%;
+}
 :root {
     --primary-color: #e9e8e3;
     --secondary-color: #ffb901;
