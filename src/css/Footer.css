@@ -1,0 +1,106 @@
+.main-footer {
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 30px 0;
+    color: var(--text-color);
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 70px;
+}
+
+/* Logo Styling */
+.footer-logo img {
+    width: 190px;
+}
+
+/* Quick Links & Contact Section */
+.footer-links, .footer-contact-us {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links p, .footer-contact-us p {
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+
+ul {
+    padding-left: 0;
+}
+
+ul li {
+    list-style: none;
+    margin: 8px 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+/* Reduced FontAwesome Contact Icons Size */
+.icon {
+    margin-right: 8px;
+    color: var(--secondary-color);
+    font-size: 20px !important; /* Force size change */
+}
+
+
+/* Social Media Icons */
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    font-size: 22px; /* Slightly reduced social icon size */
+    color: var(--secondary-color);
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+    color: var(--text-color);
+}
+
+/* 🔹 Mobile View - Align Everything to the Left */
+@media screen and (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 20px;
+    }
+
+    .footer-logo img {
+        width: 140px;
+        margin-bottom: 10px;
+    }
+
+    .footer-links, .footer-contact-us {
+        width: 100%;
+        align-items: flex-start;
+        margin-top: 15px;
+    }
+
+    ul li {
+        font-size: 16px;
+    }
+
+    .icon {
+        font-size: 14px; /* Further reduced icon size for mobile */
+    }
+
+    .social-icons {
+        justify-content: flex-start;
+        gap: 12px;
+    }
+}

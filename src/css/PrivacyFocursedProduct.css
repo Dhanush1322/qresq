@@ -1,0 +1,76 @@
+/* PrivacyFocursedProduct.css */
+
+.privacy-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+ 
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+}
+
+h4 {
+  color: var(--text-color); /* Fixed typo from ---text-color to --text-color */
+}
+
+.product {
+  width: 14rem; /* Use this width for consistency */
+  text-align: center;
+  /* Optionally you can change the width to 400px if preferred, but keeping it responsive */
+  width: 400px;
+}
+
+.icon-icon {
+  font-size: 3rem;
+  color: var(--secondary-color); /* Use a variable for secondary color */
+  margin-bottom: 1rem;
+}
+
+.product-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  color: #4b4b4b;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .product-container {
+    flex-direction: column; /* Stack the items vertically on mobile */
+    align-items: center;
+  }
+
+  .product {
+    width: 100%; /* Full width for product on mobile */
+    margin-bottom: 1.5rem; /* Space between products when stacked */
+  }
+
+  .heading {
+    font-size: 1.25rem; /* Smaller heading for mobile */
+  }
+
+  .icon {
+    font-size: 2.5rem; /* Smaller icons on mobile */
+  }
+
+  .product-title {
+    font-size: 1.1rem; /* Smaller titles on mobile */
+  }
+
+  .product-description {
+    font-size: 0.9rem; /* Smaller text for descriptions on mobile */
+  }
+}

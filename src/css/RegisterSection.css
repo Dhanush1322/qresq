@@ -1,0 +1,110 @@
+/* Login Container */
+.Register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: var(--text-color);
+    padding: 20px; /* Ensures proper spacing */
+}
+
+/* Login Box */
+.Register-box {
+    width: 500px;
+    max-width: 100%; /* Makes it responsive */
+    height: auto;
+    background: #1e1e1e;
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    border: 1px solid white;
+}
+
+/* Heading */
+.Register-box h2 {
+    color: #f1c40f;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Input Group */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%; /* Ensures full width for responsiveness */
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    font-size: 16px;
+}
+p{
+    color: white;
+    text-align: left;
+}
+/* Submit Button */
+.submit-btn {
+    width: 100%; /* Fully responsive */
+    padding: 10px;
+    background: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #d4ac0d;
+    transform: scale(1.05);
+}
+
+/* 📱 Mobile Responsive */
+@media screen and (max-width: 600px) {
+    .login-box {
+        width: 90%; /* Makes it fit better on small screens */
+        padding: 30px;
+    }
+
+    .input-group input {
+        width: 100%; /* Full width on smaller screens */
+        font-size: 14px;
+    }
+
+    .submit-btn {
+        width: 100%; /* Button adapts to mobile screens */
+    }
+}
+
+/* Align the paragraph to the left */
+.login-box p {
+    color: white;
+    font-size: 14px;
+    text-align: left;
+    margin-top: 15px;
+}
+/* Style for the Register Link */
+.register-link {
+    color: #f1c40f;  /* Gold color for the link */
+    text-decoration: none;  /* Removes the underline */
+    font-weight: bold;  /* Makes it stand out */
+    cursor: pointer;
+}
+
+.register-link:hover {
+    text-decoration: underline;  /* Underline on hover */
+    color: #d4ac0d;  /* Darker gold for hover effect */
+}
