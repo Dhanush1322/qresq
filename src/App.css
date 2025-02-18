@@ -1,5 +1,6 @@
 body{
-  max-width: 100%;
+  max-width: 1600px; /* Adjust as needed */
+  
 }
 :root {
     --primary-color: #e9e8e3;
