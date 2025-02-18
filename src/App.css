@@ -1,6 +1,6 @@
-body{
-  max-width: 1600px; /* Adjust as needed */
-  
+
+.App{
+  max-width: 100%;
 }
 :root {
     --primary-color: #e9e8e3;
