@@ -10,6 +10,11 @@ import ActiveUser from './dashboard/pages/ActiveUser';
 import AddProducts from './dashboard/pages/AddProducts';
 import ProductList from './dashboard/pages/ProductList';
 import Admin from './pages/Admin';
+import OrderList from './dashboard/pages/OrderList';
+import ApprovedOrder from './dashboard/pages/ApprovedOrder';
+import DeleverdOrder from './dashboard/pages/DeleverdOrder';
+import RejectedOrder from './dashboard/pages/RejectedOrder';
+
 function App() {
   return (
     <Router>
@@ -25,6 +30,11 @@ function App() {
         <Route path="/userlist" element={<ActiveUser />} />
         <Route path="/AddProducts" element={<AddProducts />} />
         <Route path="/ProductList" element={<ProductList />} />
+        <Route path="/OrderList" element={<OrderList/>}/>
+        <Route path="/ApprovedOrder" element={<ApprovedOrder/>}/>
+        <Route path="/DeleverdOrder" element={<DeleverdOrder/>}/>
+        <Route path="/RejectedOrder" element={<RejectedOrder/>}/>
+        
         </Routes>
 
       </div>

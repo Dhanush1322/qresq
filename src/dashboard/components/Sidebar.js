@@ -47,21 +47,21 @@ const Sidebar = ({ isOpen }) => {
 
         <hr className="sidebar-divider" />
         <li className="sidebar-item">
-          <Link to="/ApprovedOrders">
+          <Link to="/ApprovedOrder">
             <CheckCircle size={20} /> <span>Approved Orders</span>
           </Link>
         </li>
 
         <hr className="sidebar-divider" />
         <li className="sidebar-item">
-          <Link to="/DeliveredOrders">
+          <Link to="/DeleverdOrder">
             <Truck size={20} /> <span>Delivered Orders</span>
           </Link>
         </li>
 
         <hr className="sidebar-divider" />
         <li className="sidebar-item">
-          <Link to="/RejectedOrders">
+          <Link to="/RejectedOrder">
             <XCircle size={20} /> <span>Rejected Orders</span>
           </Link>
         </li>
