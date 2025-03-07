@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Home, User, Settings, Box, List, LogOut, CheckCircle, Truck, XCircle } from 'lucide-react';
-import './Sidebar.css'; // Import CSS for styling
+import { Home, User, Box, List, LogOut, CheckCircle, Truck, XCircle } from 'lucide-react';
+import { Button, CircularProgress } from '@mui/material'; // Import Material UI loader
+import './Sidebar.css';
 import Logo from '../../img/logo.png';
 
-const Sidebar = ({ isOpen }) => {
+const Sidebar = ({ isOpen, handleLogout }) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleLogoutClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      handleLogout(); // Call the actual logout function
+      setLoading(false);
+    }, 2000); // Simulated delay for logout
+  };
+
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'collapsed'}`}>
       <img src={Logo} alt="Logo" width="130" className="sidebar-logo" />
@@ -16,7 +27,12 @@ const Sidebar = ({ isOpen }) => {
             <Home size={20} /> <span>Dashboard</span>
           </Link>
         </li>
-
+        <hr className="sidebar-divider" />
+        <li className="sidebar-item">
+          <Link to="/ChangePassword">
+            <User size={20} /> <span>Change Password</span>
+          </Link>
+        </li>
         <hr className="sidebar-divider" />
         <li className="sidebar-item">
           <Link to="/userlist">
@@ -68,9 +84,14 @@ const Sidebar = ({ isOpen }) => {
 
         <hr className="sidebar-divider" />
         <li className="sidebar-item logout">
-          <Link to="/logout">
-            <LogOut size={20} /> <span>Logout</span>
-          </Link>
+          <Button
+            onClick={handleLogoutClick}
+            variant="outlined"
+            sx={{ display: 'flex', alignItems: 'center', gap: 1, width: '100%' }}
+          >
+            {loading ? <CircularProgress size={20} /> : <LogOut size={20} />}
+            <span>{loading ? "Logging out..." : "Logout"}</span>
+          </Button>
         </li>
       </ul>
     </div>

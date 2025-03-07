@@ -14,6 +14,7 @@ import OrderList from './dashboard/pages/OrderList';
 import ApprovedOrder from './dashboard/pages/ApprovedOrder';
 import DeleverdOrder from './dashboard/pages/DeleverdOrder';
 import RejectedOrder from './dashboard/pages/RejectedOrder';
+import ChangePassword from './dashboard/pages/ChangePassword';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path="/Cart" element={<Cart />} />
           {/* Admin Dashboard */}
         <Route path="/DashboardPage" element={<DashboardPage />} />
+        <Route path="/ChangePassword" element={<ChangePassword />} />
         <Route path="/userlist" element={<ActiveUser />} />
         <Route path="/AddProducts" element={<AddProducts />} />
         <Route path="/ProductList" element={<ProductList />} />

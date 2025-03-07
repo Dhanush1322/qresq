@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import Navbar from '../components/Navbar';
-import DashboardMain from '../components/DashboardMain';
+import ChnagePasswodForm from '../components/ChnagePasswodForm';
 import './DashboardPage.css';
 
-const DashboardPage = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+function ChangePassword() {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const navigate = useNavigate();
 
   // ✅ Check if authToken exists on page load
@@ -33,10 +33,10 @@ const DashboardPage = () => {
       <Sidebar isOpen={isSidebarOpen} handleLogout={handleLogout} />
       <div className="dashboard-content">
         <Navbar toggleSidebar={toggleSidebar} />
-        <DashboardMain />
+        <ChnagePasswodForm />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DashboardPage;
+export default ChangePassword
