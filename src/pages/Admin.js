@@ -22,7 +22,7 @@ const Admin = () => {
     setLoading(true); // Show loading spinner
 
     try {
-      const response = await fetch("https://qrr.eu-4.evennode.com/api/admin/login", {
+      const response = await fetch("http://qrr.eu-4.evennode.com/api/admin/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
