@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; // ✅ Import useNavigate
 import Logo from '../img/logo.png';
 import { TextField, Button, Container, Typography, Card, CardContent, CircularProgress, Dialog, DialogTitle, DialogContent, DialogActions, Box } from "@mui/material";
+import Swal from "sweetalert2";
 
 const Admin = () => {
   const [credentials, setCredentials] = useState({ userId: "", password: "" });
@@ -19,8 +20,8 @@ const Admin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    setLoading(true); // Show loading spinner
-
+    setLoading(true);
+  
     try {
       const response = await fetch("http://qrr.eu-4.evennode.com/api/admin/login", {
         method: "POST",
@@ -32,33 +33,41 @@ const Admin = () => {
           password: credentials.password,
         }),
       });
-
+  
       const data = await response.json();
-      setLoading(false); // Hide loading spinner
-
+      setLoading(false);
+  
       if (data.success) {
-        localStorage.setItem("authToken", data.result.authToken); // ✅ Store auth token
-        setPopupMessage("Login Successful!");
-        setIsPopupOpen(true);
-
+        localStorage.setItem("authToken", data.result.authToken);
+        Swal.fire({
+          title: "Success!",
+          text: "Login Successful!",
+          icon: "success",
+          timer: 2000,
+          showConfirmButton: false
+        });
+  
         setTimeout(() => {
-          setIsPopupOpen(false);
-          navigate("/DashboardPage"); // ✅ Redirect to Dashboard
+          navigate("/DashboardPage");
         }, 2000);
       } else {
-        setError(data.result.MESSAGE || "Login failed");
-        setPopupMessage("Login failed! Please check your credentials.");
-        setIsPopupOpen(true);
+        Swal.fire({
+          title: "Error!",
+          text: data.result.MESSAGE || "Login failed! Please check your credentials.",
+          icon: "error",
+        });
       }
     } catch (error) {
       setLoading(false);
-      setError("An error occurred. Please try again.");
-      setPopupMessage("An error occurred while logging in.");
-      setIsPopupOpen(true);
+      Swal.fire({
+        title: "Error!",
+        text: "An error occurred. Please try again.",
+        icon: "error",
+      });
       console.error("Login Error:", error);
     }
   };
-
+  
   return (
     <Container maxWidth="xs">
       <Card sx={{ boxShadow: 3, borderRadius: 3, mt: 10, p: 3 }}>
